@@ -38,10 +38,6 @@ chmod +x install.sh
 
 ---
 
-**Developer Note for Distribution:**
-Before sharing this desklet with others, you must provide your own Google Cloud "Desktop Application" OAuth credentials. Open `google-tasks@desklet/google_tasks_api.py` and replace `REPLACE_WITH_YOUR_CLIENT_ID` and `REPLACE_WITH_YOUR_CLIENT_SECRET` with your actual OAuth keys. This allows users to sign in seamlessly without creating their own Google Cloud Projects.
-
----
 
 ## Desklet Settings
 
@@ -79,9 +75,6 @@ google-tasks@desklet/               # Cinnamon Spices submission root
 3. **Tokens** are stored in `~/.config/google-tasks-desklet/token.json`. The access token is auto-refreshed using the stored refresh token.
 
 ## Troubleshooting
-
-**"The desklet developer has not configured the Google API credentials."**
-- The person who provided this desklet needs to add their `CLIENT_ID` and `CLIENT_SECRET` into `google_tasks_api.py`.
 
 **"Failed to fetch tasks"**
 - Check your internet connection

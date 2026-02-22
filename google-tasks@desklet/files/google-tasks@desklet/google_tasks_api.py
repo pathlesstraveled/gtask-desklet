@@ -36,10 +36,8 @@ TOKEN_URL = "https://oauth2.googleapis.com/token"
 AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
 TASKS_API_BASE = "https://tasks.googleapis.com/tasks/v1"
 
-# Developer: Replace these with your Google Cloud OAuth Desktop application credentials
-# before distributing the desklet.
-DEFAULT_CLIENT_ID = "REPLACE_WITH_YOUR_CLIENT_ID"
-DEFAULT_CLIENT_SECRET = "REPLACE_WITH_YOUR_CLIENT_SECRET"
+DEFAULT_CLIENT_ID = "522237461681-rn1eo16nveoa8d8qhf1sn7e62gf330u1.apps.googleusercontent.com"
+DEFAULT_CLIENT_SECRET = "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"
 
 os.makedirs(CONFIG_DIR, exist_ok=True)
 
@@ -294,7 +292,7 @@ def complete_task(tasklist_id, task_id, completed=True):
 def check_status():
     """Check authentication status."""
     client_id, _ = load_client_secrets()
-    if not client_id or client_id == "REPLACE_WITH_YOUR_CLIENT_ID":
+    if not client_id or not client_id:
         return {
             "status": "no_credentials",
             "message": "The desklet developer has not configured the Google API credentials."
@@ -384,7 +382,7 @@ def start_oauth_flow():
     _server_done.clear()
 
     client_id, client_secret = load_client_secrets()
-    if not client_id or client_id == "REPLACE_WITH_YOUR_CLIENT_ID":
+    if not client_id or not client_id:
         print(json.dumps({
             "error": "no_credentials",
             "message": "The desklet developer has not configured the Google API credentials."
