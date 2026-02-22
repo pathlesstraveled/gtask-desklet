@@ -1,100 +1,93 @@
 # Google Tasks Desklet
 
-A native Linux Mint Cinnamon desklet that displays your Google Tasks directly on your desktop with a beautiful transparent glassmorphism theme.
-
-## Features
-
-- **Google OAuth2 login** — secure sign-in via browser, tokens stored locally
-- **All task lists** — switch between multiple Google Task lists with a tab bar
-- **Subtasks** — nested subtasks shown under their parents
-- **Due dates** — color-coded (overdue in red, today highlighted, upcoming shown)
-- **Task notes** — notes shown beneath task titles
-- **Toggle completion** — click the checkbox to mark tasks done/undone
-- **Auto-refresh** — configurable refresh interval (default: every 5 minutes)
-- **Show/hide completed** — configurable in desklet settings
-- **Transparent glass theme** — dark, blurred background with color-accented UI
+A Cinnamon desklet that displays your Google Tasks directly on your desktop.
 
 ## Requirements
 
-- Linux Mint with Cinnamon desktop
-- Python 3 (pre-installed on Linux Mint)
-- Internet connection for Google Tasks API
+- Linux Mint 20 or newer (or any distro running Cinnamon 4.0+)
+- Cinnamon 4.0, 4.2, 4.4, 4.6, 4.8, 5.0, 5.2, 5.4, 5.6, 5.8, or 6.0
+- Python 3.6 or newer (pre-installed on Linux Mint)
 - A Google account with Google Tasks
+
+> **Other distros:** The desklet will work on any Linux distribution running the Cinnamon desktop environment (e.g., Ubuntu with Cinnamon, Fedora Cinnamon Spin, Arch with Cinnamon). Linux Mint is the recommended environment.
 
 ## Installation
 
-1. Download or clone this repository.
-2. Run the installer:
+### Linux Mint / Ubuntu (Manual)
 
 ```bash
-cd ~/AI/google\ tasks\ desklet
+git clone https://github.com/pathlesstraveled/gtask-deklet.git
+cd gtask-deklet
 chmod +x install.sh
 ./install.sh
 ```
 
-3. Right-click your Cinnamon desktop and select **Add Desklets**.
-4. Find **Google Tasks** in the list and click **Add to Desktop**.
-5. Click **"Sign in with Google"** on the desklet to authenticate.
+### From Cinnamon Spices
 
----
+1. Open **System Settings → Desklets**
+2. Search for **Google Tasks**
+3. Click **Install**
 
+## First Run
 
-## Desklet Settings
+1. Right-click your desktop and select **Add Desklets**
+2. Find **Google Tasks** and click **Add to Desktop**
+3. Click **Sign in with Google** on the desklet
+4. Your browser will open the Google OAuth screen — allow access to Google Tasks
+5. You can close the browser tab and return to your desktop
 
-Right-click the desklet and select **Settings** to configure:
+Your credentials are stored locally in `~/.config/google-tasks-desklet/token.json` and are never sent anywhere other than Google's servers.
+
+## Features
+
+- **Multiple task lists** — tab bar to switch between all your Google Task lists
+- **Subtasks** — nested under their parent tasks
+- **Due dates** — color-coded: overdue in red, due today highlighted, upcoming shown
+- **Task notes** — displayed beneath task titles
+- **Toggle completion** — click the checkbox to mark tasks done or undone
+- **Auto-refresh** — configurable interval (default: every 5 minutes)
+- **Show/hide completed tasks** — toggle in desklet settings
+- **Transparent glass theme** — dark blurred background with a clean accent UI
+
+## Settings
+
+Right-click the desklet and select **Configure** to adjust:
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| Show completed tasks | Off | Shows done tasks with strikethrough |
-| Auto-refresh interval | 5 min | How often to fetch from Google |
-
-## File Structure
-
-```
-google-tasks@desklet/               # Cinnamon Spices submission root
-├── files/
-│   └── google-tasks@desklet/       # Actual desklet files
-│       ├── desklet.js              # Main Cinnamon desklet (JavaScript/GJS)
-│       ├── google_tasks_api.py     # Python backend: OAuth2 + Google Tasks API
-│       ├── stylesheet.css          # Transparent glass theme
-│       ├── metadata.json           # Desklet metadata
-│       ├── settings-schema.json    # Desklet settings definition
-│       └── icons/                  # Desklet icons
-├── info.json                       # Spices author info
-└── README.md                       # Spices-facing README
-```
-
-## How It Works
-
-1. **`desklet.js`** — runs in Cinnamon's JavaScript environment (GJS). Builds the UI using St (Shell Toolkit) widgets. Spawns the Python backend as a subprocess.
-2. **`google_tasks_api.py`** — handles all Google API communication:
-  - `auth` — starts a local HTTP server on port 8765, opens the browser for OAuth2, exchanges the code for tokens, and saves them
-  - `fetch` — fetches all task lists and tasks, outputs JSON
-  - `complete`/`uncomplete` — updates task status via the API
-  - `logout` — deletes stored tokens
-3. **Tokens** are stored in `~/.config/google-tasks-desklet/token.json`. The access token is auto-refreshed using the stored refresh token.
+| Show completed tasks | Off | Show done tasks with strikethrough |
+| Auto-refresh interval | 5 min | How often to sync with Google |
 
 ## Troubleshooting
 
-**"Failed to fetch tasks"**
+**Desklet not appearing in the list after install**
+
+- Re-run `./install.sh`
+- In Cinnamon System Settings → Desklets, click the refresh icon
+
+**Tasks not loading / "Failed to fetch tasks"**
+
 - Check your internet connection
-- Click Refresh (↻) button to retry
-- Try signing out and signing in again
+- Click the ↻ button to manually refresh
+- Sign out and sign back in
 
-**Desklet not appearing in the list**
-- Run `./install.sh` again
-- In Cinnamon System Settings > Desklets, click the refresh button
+**Authentication window does not open**
 
-**Tasks not updating**
-- The desklet auto-refreshes on the configured interval
-- Click the ↻ button for an immediate refresh
+- Make sure port `8765` is not in use by another application
+- Try running `python3 google_tasks_api.py auth` from the install directory to see the error
 
-## Logout
+## Sign Out
 
-Click the **Logout** button in the desklet header to sign out. Your tokens are deleted from disk. You can sign in again at any time.
+Click the **Logout** button in the desklet header. Your stored token is deleted. You can sign back in at any time.
+
+## Issues
+
+Open an issue at [github.com/pathlesstraveled/gtask-deklet/issues](https://github.com/pathlesstraveled/gtask-deklet/issues) with a description of the problem.
 
 ## Privacy
 
-- All data stays local — tasks are fetched directly from Google's API to your machine
-- OAuth tokens are stored only in `~/.config/google-tasks-desklet/token.json`
-- No third-party servers involved
+None of your task data is collected, stored, or shared with the developer or any third party. Tasks are fetched directly from Google's API to your machine. OAuth tokens are stored only in `~/.config/google-tasks-desklet/token.json`.
+
+## License
+
+GNU General Public License v3

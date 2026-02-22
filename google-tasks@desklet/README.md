@@ -1,47 +1,67 @@
 # Google Tasks Desklet
 
-Display your Google Tasks natively on your Linux Mint Cinnamon desktop. Sign in with your Google account to see all your task lists and tasks with a beautiful transparent theme.
+Display your Google Tasks directly on your Cinnamon desktop.
 
 ## Requirements
 
-- Cinnamon 4.0 or later
-- Python 3 (pre-installed on Linux Mint)
-- Internet connection for Google Tasks API
+- Cinnamon 4.0 or newer
+- Linux Mint 20+ (recommended), or any Linux distro running Cinnamon
+- Python 3.6 or newer (pre-installed on Linux Mint)
 - A Google account with Google Tasks
 
 ## Installation
 
-This desklet can be installed directly from the Cinnamon Spices website or via **System Settings → Desklets**.
+### Via Cinnamon Spices
 
-After adding the desklet to your desktop, click **"Sign in with Google"** to authenticate.
+1. Open **System Settings → Desklets**
+2. Search for **Google Tasks**
+3. Click **Install**
+
+### Manual
+
+```bash
+git clone https://github.com/pathlesstraveled/gtask-deklet.git
+cd gtask-deklet
+chmod +x install.sh
+./install.sh
+```
+
+## First Run
+
+1. Right-click your desktop → **Add Desklets**
+2. Find **Google Tasks** → **Add to Desktop**
+3. Click **Sign in with Google** on the desklet
+4. Complete the Google OAuth flow in your browser
+5. Return to your desktop — your tasks will load automatically
 
 ## Features
 
-- **Google OAuth2 login** — secure sign-in via browser, tokens stored locally
-- **All task lists** — switch between multiple Google Task lists with a tab bar
-- **Subtasks** — nested subtasks shown under their parents
-- **Due dates** — color-coded (overdue in red, today highlighted, upcoming shown)
-- **Task notes** — notes shown beneath task titles
-- **Toggle completion** — click the checkbox to mark tasks done/undone
-- **Auto-refresh** — configurable refresh interval (default: every 5 minutes)
-- **Show/hide completed** — configurable in desklet settings
-- **Transparent glass theme** — dark, blurred background with color-accented UI
+- Switch between multiple Google Task lists with a tab bar
+- Subtasks nested under their parents
+- Color-coded due dates (overdue, today, upcoming)
+- Task notes shown beneath titles
+- Click a checkbox to toggle task completion
+- Auto-refresh on a configurable interval
+- Show or hide completed tasks from settings
 
-## Settings
+## FAQ
 
-Right-click the desklet and select **Settings** to configure:
+**How do I manually refresh?**
 
-| Setting | Default | Description |
-| --- | --- | --- |
-| Show completed tasks | Off | Shows done tasks with strikethrough |
-| Auto-refresh interval | 5 min | How often to fetch from Google |
+Click the ↻ button in the desklet header.
+
+**Tasks are not loading**
+
+Check your internet connection, then click ↻ to retry. If the issue persists, sign out and sign back in.
+
+**How do I sign out?**
+
+Click the **Logout** button in the desklet header. You can sign back in at any time.
+
+**How do I report a bug?**
+
+Open an issue at [github.com/pathlesstraveled/gtask-deklet/issues](https://github.com/pathlesstraveled/gtask-deklet/issues).
 
 ## Privacy
 
-- All data stays local — tasks are fetched directly from Google's API to your machine
-- OAuth tokens are stored only in `~/.config/google-tasks-desklet/token.json`
-- No third-party servers involved
-
-## Bug Reports
-
-Please open a GitHub issue at [linuxmint/cinnamon-spices-desklets](https://github.com/linuxmint/cinnamon-spices-desklets/issues) if the desklet doesn't work as expected.
+None of your data is collected, stored, or shared with the developer or any third party. OAuth tokens are stored only in `~/.config/google-tasks-desklet/token.json` on your machine.
