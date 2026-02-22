@@ -1,0 +1,11 @@
+{
+  "uuid": "google-tasks@desklet",
+  "name": "Google Tasks",
+  "description": "Display your Google Tasks natively on your Linux Mint Cinnamon desktop. Sign in with your Google account to see all your task lists and tasks with a beautiful transparent theme.",
+  "version": "1.0.0",
+  "cinnamon-version": ["4.0", "4.2", "4.4", "4.6", "4.8", "5.0", "5.2", "5.4", "5.6", "5.8", "6.0"],
+  "author": "Google Tasks Desklet",
+  "website": "",
+  "icon": "checkbox-checked-symbolic",
+  "max-instances": "1"
+}

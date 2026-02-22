@@ -1,0 +1,343 @@
+/* ============================================
+   Google Tasks Desklet - Transparent Glass Theme
+   ============================================ */
+
+/* === Root Container === */
+.desklet-container {
+  padding: 0;
+}
+
+/* === Main Panel === */
+.gt-panel {
+  min-width: 320px;
+  max-width: 380px;
+  background-color: rgba(15, 20, 35, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* === Header === */
+.gt-header {
+  padding: 14px 18px 12px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 16px 16px 0 0;
+}
+
+.gt-header-row {
+  spacing: 8px;
+}
+
+.gt-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.gt-subtitle {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* === Header Buttons === */
+.gt-icon-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 4px;
+}
+
+.gt-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* === Tab Bar (Task Lists) === */
+.gt-tabs {
+  padding: 8px 12px 0 12px;
+  spacing: 4px;
+}
+
+.gt-tab {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.gt-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.gt-tab-active {
+  color: rgba(79, 195, 247, 0.95);
+  background-color: rgba(79, 195, 247, 0.12);
+  border-color: rgba(79, 195, 247, 0.3);
+}
+
+/* === Scroll Area === */
+.gt-scroll {
+  max-height: 420px;
+}
+
+/* === Task List Content === */
+.gt-task-list {
+  padding: 8px 12px 12px 12px;
+  spacing: 4px;
+}
+
+/* === Task Item === */
+.gt-task-row {
+  padding: 7px 10px;
+  border-radius: 10px;
+  spacing: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.gt-task-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* === Checkbox === */
+.gt-checkbox {
+  min-width: 18px;
+  max-width: 18px;
+  min-height: 18px;
+  max-height: 18px;
+  border-radius: 5px;
+  border: 1px solid rgba(79, 195, 247, 0.5);
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 0;
+  margin-right: 8px;
+  font-size: 11px;
+}
+
+.gt-checkbox:hover {
+  border-color: rgba(79, 195, 247, 0.9);
+  background-color: rgba(79, 195, 247, 0.1);
+}
+
+.gt-checkbox-done {
+  border-color: rgba(102, 187, 106, 0.6);
+  background-color: rgba(102, 187, 106, 0.15);
+  color: rgba(102, 187, 106, 0.9);
+}
+
+.gt-checkbox-done:hover {
+  border-color: rgba(102, 187, 106, 0.9);
+  background-color: rgba(102, 187, 106, 0.25);
+}
+
+/* === Task Text === */
+.gt-task-title {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.gt-task-title-done {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: line-through;
+}
+
+.gt-task-due {
+  font-size: 10px;
+  color: rgba(79, 195, 247, 0.65);
+  padding-left: 26px;
+  margin-top: -2px;
+}
+
+.gt-task-due-overdue {
+  font-size: 10px;
+  color: rgba(239, 83, 80, 0.8);
+  padding-left: 26px;
+  margin-top: -2px;
+}
+
+.gt-task-notes {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  padding-left: 26px;
+  margin-top: -2px;
+}
+
+/* === Subtasks === */
+.gt-subtask-row {
+  padding: 4px 10px 4px 26px;
+  border-radius: 8px;
+  spacing: 6px;
+  background-color: transparent;
+}
+
+.gt-subtask-row:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.gt-subtask-title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.gt-subtask-title-done {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.28);
+  text-decoration: line-through;
+}
+
+/* === Divider === */
+.gt-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.06);
+  margin: 2px 0;
+}
+
+/* === Empty State === */
+.gt-empty {
+  padding: 24px 16px;
+}
+
+.gt-empty-icon {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+.gt-empty-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+/* === Login Screen === */
+.gt-login-box {
+  padding: 24px 20px;
+  spacing: 12px;
+}
+
+.gt-login-icon {
+  font-size: 40px;
+  color: rgba(79, 195, 247, 0.6);
+  text-align: center;
+}
+
+.gt-login-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+.gt-login-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+}
+
+.gt-login-btn {
+  padding: 10px 24px;
+  border-radius: 24px;
+  background-color: rgba(66, 133, 244, 0.8);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 13px;
+  font-weight: bold;
+  border: 1px solid rgba(66, 133, 244, 0.5);
+}
+
+.gt-login-btn:hover {
+  background-color: rgba(66, 133, 244, 1.0);
+  border-color: rgba(66, 133, 244, 0.8);
+}
+
+.gt-logout-btn {
+  padding: 5px 14px;
+  border-radius: 14px;
+  background-color: rgba(239, 83, 80, 0.15);
+  color: rgba(239, 83, 80, 0.8);
+  font-size: 11px;
+  border: 1px solid rgba(239, 83, 80, 0.25);
+}
+
+.gt-logout-btn:hover {
+  background-color: rgba(239, 83, 80, 0.3);
+  color: rgba(239, 83, 80, 1.0);
+  border-color: rgba(239, 83, 80, 0.5);
+}
+
+/* === Status Bar === */
+.gt-statusbar {
+  padding: 6px 14px 10px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gt-status-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.gt-status-ok {
+  color: rgba(102, 187, 106, 0.6);
+}
+
+.gt-status-error {
+  color: rgba(239, 83, 80, 0.7);
+}
+
+/* === Loading === */
+.gt-loading {
+  padding: 24px;
+}
+
+.gt-loading-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+/* === No Credentials Warning === */
+.gt-warn-box {
+  padding: 16px;
+  margin: 8px;
+  border-radius: 10px;
+  background-color: rgba(255, 152, 0, 0.1);
+  border: 1px solid rgba(255, 152, 0, 0.25);
+  spacing: 6px;
+}
+
+.gt-warn-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(255, 183, 77, 0.9);
+}
+
+.gt-warn-text {
+  font-size: 10px;
+  color: rgba(255, 183, 77, 0.65);
+}
+
+/* === Progress Dot Animation (simulated via color) === */
+.gt-dot-1 { color: rgba(79, 195, 247, 0.9); }
+.gt-dot-2 { color: rgba(79, 195, 247, 0.5); }
+.gt-dot-3 { color: rgba(79, 195, 247, 0.2); }
+
+/* === Task Count Badge === */
+.gt-count-badge {
+  padding: 1px 7px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}

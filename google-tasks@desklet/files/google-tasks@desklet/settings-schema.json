@@ -1,0 +1,18 @@
+{
+  "show-completed": {
+    "type": "checkbox",
+    "default": false,
+    "description": "Show completed tasks",
+    "tooltip": "When enabled, completed tasks are shown in the list with a strikethrough style."
+  },
+  "refresh-interval": {
+    "type": "spinbutton",
+    "default": 5,
+    "min": 1,
+    "max": 60,
+    "step": 1,
+    "units": "minutes",
+    "description": "Auto-refresh interval",
+    "tooltip": "How often to automatically refresh tasks from Google (in minutes)."
+  }
+}

@@ -1,0 +1,4 @@
+spices-desklets-temp/
+*.pyc
+__pycache__/
+.DS_Store
