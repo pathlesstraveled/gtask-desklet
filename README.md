@@ -16,8 +16,8 @@ A Cinnamon desklet that displays your Google Tasks directly on your desktop.
 ### Linux Mint / Ubuntu (Manual)
 
 ```bash
-git clone https://github.com/pathlesstraveled/gtask-deklet.git
-cd gtask-deklet
+git clone https://github.com/pathlesstraveled/gtask-desklet.git
+cd gtask-desklet
 chmod +x install.sh
 ./install.sh
 ```
@@ -82,7 +82,7 @@ Click the **Logout** button in the desklet header. Your stored token is deleted.
 
 ## Issues
 
-Open an issue at [github.com/pathlesstraveled/gtask-deklet/issues](https://github.com/pathlesstraveled/gtask-deklet/issues) with a description of the problem.
+Open an issue at [github.com/pathlesstraveled/gtask-desklet/issues](https://github.com/pathlesstraveled/gtask-desklet/issues) with a description of the problem.
 
 ## Privacy
 

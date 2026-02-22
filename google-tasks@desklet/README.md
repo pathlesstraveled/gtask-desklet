@@ -20,8 +20,8 @@ Display your Google Tasks directly on your Cinnamon desktop.
 ### Manual
 
 ```bash
-git clone https://github.com/pathlesstraveled/gtask-deklet.git
-cd gtask-deklet
+git clone https://github.com/pathlesstraveled/gtask-desklet.git
+cd gtask-desklet
 chmod +x install.sh
 ./install.sh
 ```
@@ -60,7 +60,7 @@ Click the **Logout** button in the desklet header. You can sign back in at any t
 
 **How do I report a bug?**
 
-Open an issue at [github.com/pathlesstraveled/gtask-deklet/issues](https://github.com/pathlesstraveled/gtask-deklet/issues).
+Open an issue at [github.com/pathlesstraveled/gtask-desklet/issues](https://github.com/pathlesstraveled/gtask-desklet/issues).
 
 ## Privacy
 
