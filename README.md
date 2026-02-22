@@ -5,7 +5,6 @@ A native Linux Mint Cinnamon desklet that displays your Google Tasks directly on
 ## Features
 
 - **Google OAuth2 login** — secure sign-in via browser, tokens stored locally
-- **Add tasks** — keyboard shortcut to add new tasks (default: Super+T)
 - **All task lists** — switch between multiple Google Task lists with a tab bar
 - **Subtasks** — nested subtasks shown under their parents
 - **Due dates** — color-coded (overdue in red, today highlighted, upcoming shown)
